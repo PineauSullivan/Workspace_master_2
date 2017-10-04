@@ -131,8 +131,13 @@ function(doc) {
 // Q12
 // Show the movies where the director is also an actor.
 //------------------------------------------------//
-
-
+function(doc) {
+  if (doc.actors) {
+    for(var actor in doc.actors) {
+      emit(doc.actors[actor].name, doc.actors[actor].role);
+    }
+  }
+}
 
 //------------------------------------------------//
 // Q13
